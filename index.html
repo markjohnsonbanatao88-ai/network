@@ -3,73 +3,176 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex,nofollow,noarchive">
-<title>Readable Chat Archives</title>
+<title>Chat Archives</title>
 <style>
 :root {
-  --bg:#0f1117; --panel:#171a23; --panel2:#202431; --text:#e9edf5;
-  --muted:#9aa4b2; --accent:#a78bfa; --accent2:#7dd3fc; --border:#323849;
+  --bg: #0f1117;
+  --panel: #171a23;
+  --panel2: #202431;
+  --text: #e9edf5;
+  --muted: #9aa4b2;
+  --accent: #a78bfa;
+  --accent2: #7dd3fc;
+  --border: #323849;
 }
-*{box-sizing:border-box}
-body{
-  margin:0; min-height:100vh;
-  background:radial-gradient(circle at top left, rgba(167,139,250,.18), transparent 35%),
-             linear-gradient(180deg,#0f1117 0%,#131722 100%);
-  color:var(--text);
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: radial-gradient(circle at top left, rgba(167,139,250,.14), transparent 34rem), var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.45;
 }
-main{max-width:1000px;margin:0 auto;padding:48px 18px}
-h1{font-size:clamp(30px,6vw,56px);letter-spacing:-.055em;margin:0 0 10px}
-p{color:var(--muted);line-height:1.6;margin:0 0 28px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-.card{
-  display:block;text-decoration:none;color:var(--text);
-  background:rgba(23,26,35,.86);
-  border:1px solid var(--border);
-  border-radius:24px;
-  padding:22px;
-  box-shadow:0 18px 50px rgba(0,0,0,.24);
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 34px 18px 70px;
 }
-.card:hover{border-color:var(--accent);transform:translateY(-1px)}
-.card h2{margin:0 0 8px;font-size:24px;letter-spacing:-.03em}
-.meta{color:var(--muted);font-size:14px;display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
-.pill{border:1px solid var(--border);background:var(--panel2);border-radius:999px;padding:6px 10px}
-.warning{
-  margin-top:24px;
-  padding:14px 16px;
-  border:1px solid var(--border);
-  background:rgba(32,36,49,.76);
-  border-radius:16px;
-  color:var(--muted);
-  font-size:14px;
+h1 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 46px); letter-spacing: -.04em; }
+.subtitle { color: var(--muted); margin-bottom: 24px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.card {
+  background: rgba(23,26,35,.88);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+  min-height: 172px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 12px 28px rgba(0,0,0,.18);
 }
-@media (max-width:760px){.grid{grid-template-columns:1fr} main{padding-top:32px}}
+.card h2 { font-size: 18px; margin: 0; letter-spacing: -.02em; }
+.meta { color: var(--muted); font-size: 13px; }
+.stats { display: flex; gap: 10px; flex-wrap: wrap; color: var(--muted); font-size: 12px; }
+.pill {
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 5px 9px;
+}
+a.open {
+  margin-top: auto;
+  display: inline-block;
+  width: fit-content;
+  color: var(--text);
+  background: #2b2351;
+  border: 1px solid #6d5dd3;
+  border-radius: 999px;
+  padding: 9px 13px;
+  text-decoration: none;
+  font-size: 14px;
+}
+a.open:hover { filter: brightness(1.12); }
+.notice {
+  color: var(--muted);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+  border-radius: 14px;
+  padding: 14px;
+  margin-top: 20px;
+  font-size: 13px;
+}
 </style>
 </head>
 <body>
 <main>
-  <h1>Readable Chat Archives</h1>
-  <p>Choose a chat history to open. Each page includes search, filters, date separators, and a mobile-readable layout.</p>
+  <h1>Chat Archives</h1>
+  <div class="subtitle">Janine-style compact readable chat viewers. Open any archive below.</div>
   <section class="grid">
-    <a class="card" href="/janine-joven.html">
+    
+    <article class="card">
       <h2>Janine Tan &amp; Joven Del Rosario Ong</h2>
-      <p>Messenger export converted into a readable chat view.</p>
-      <div class="meta">
-        <span class="pill">HTML chat viewer</span>
-        <span class="pill">Search + sender filter</span>
+      <div class="meta">Readable Messenger export • text repaired for common mojibake/emoji issues • timezone: Asia/Manila</div>
+      <div class="stats">
+        <span class="pill"> messages</span>
+        <span class="pill">Existing Janine-style archive</span>
       </div>
-    </a>
-    <a class="card" href="/melodee-arevalo.html">
+      <a class="open" href="janine-joven.html">Open archive</a>
+    </article>
+    
+    <article class="card">
       <h2>Melodee Arevalo &amp; Me</h2>
-      <p>CSV chat export converted into a readable chat view.</p>
-      <div class="meta">
-        <span class="pill">37,459 messages</span>
-        <span class="pill">Nov 20, 2016 – Jul 14, 2017</span>
-        <span class="pill">Search + filters</span>
+      <div class="meta">Readable CSV chat export • Janine-style layout • compact chat bubbles • date separators</div>
+      <div class="stats">
+        <span class="pill"> messages</span>
+        <span class="pill">Existing Janine-style archive</span>
       </div>
-    </a>
+      <a class="open" href="melodee-arevalo.html">Open archive</a>
+    </article>
+    
+    <article class="card">
+      <h2>Giane Sales &amp; Joven Del Rosario Ong — Readable Chat History</h2>
+      <div class="meta">April 7, 2019 – October 31, 2023</div>
+      <div class="stats">
+        <span class="pill">15,571 messages</span>
+        <span class="pill">864 attachments</span>
+      </div>
+      <a class="open" href="giane-sales.html">Open archive</a>
+    </article>
+    
+    <article class="card">
+      <h2>Rashéy Angeles &amp; Joven Del Rosario Ong — Readable Chat History</h2>
+      <div class="meta">June 19, 2023 – August 25, 2024</div>
+      <div class="stats">
+        <span class="pill">10,643 messages</span>
+        <span class="pill">929 attachments</span>
+      </div>
+      <a class="open" href="rashey-angeles.html">Open archive</a>
+    </article>
+    
+    <article class="card">
+      <h2>Pats Thompson &amp; Joven Del Rosario Ong — Readable Chat History</h2>
+      <div class="meta">July 23, 2024 – August 11, 2024</div>
+      <div class="stats">
+        <span class="pill">1,246 messages</span>
+        <span class="pill">208 attachments · 1,246 duplicates removed</span>
+      </div>
+      <a class="open" href="pats-thompson.html">Open archive</a>
+    </article>
+    
+    <article class="card">
+      <h2>Lucy Uy &amp; Joven Del Rosario Ong — Readable Chat History</h2>
+      <div class="meta">January 3, 2019 – July 25, 2024</div>
+      <div class="stats">
+        <span class="pill">33,155 messages</span>
+        <span class="pill">2,137 attachments</span>
+      </div>
+      <a class="open" href="vivian-uy.html">Open archive</a>
+    </article>
+    
+    <article class="card">
+      <h2>Chinie &amp; Joven Del Rosario Ong — Readable Chat History</h2>
+      <div class="meta">September 2, 2020 – August 10, 2024</div>
+      <div class="stats">
+        <span class="pill">660 messages</span>
+        <span class="pill">47 attachments</span>
+      </div>
+      <a class="open" href="chinie.html">Open archive</a>
+    </article>
+    
+    <article class="card">
+      <h2>Dhesiree Arevalo &amp; Joven Del Rosario Ong — Readable Chat History</h2>
+      <div class="meta">May 14, 2018 – August 31, 2019</div>
+      <div class="stats">
+        <span class="pill">2,089 messages</span>
+        <span class="pill">110 attachments</span>
+      </div>
+      <a class="open" href="dhesiree-arevalo.html">Open archive</a>
+    </article>
+    
+    <article class="card">
+      <h2>Maricris Arevalo &amp; Joven Del Rosario Ong — Readable Chat History</h2>
+      <div class="meta">January 30, 2017 – August 12, 2018</div>
+      <div class="stats">
+        <span class="pill">3,267 messages</span>
+        <span class="pill">185 attachments</span>
+      </div>
+      <a class="open" href="maricris-arevalo.html">Open archive</a>
+    </article>
+    
   </section>
-  <div class="warning">Privacy note: Vercel deployments create shareable URLs unless you enable protection. Avoid sharing the link if these archives are private.</div>
+  <div class="notice">Private archive reminder: these are static HTML files. If deployed publicly, anyone with the URL may be able to read them.</div>
 </main>
 </body>
 </html>
